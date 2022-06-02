@@ -14,13 +14,12 @@ hands = mp_hands.Hands(max_num_hands=1)
 increment = 6
 left_clicked = False
 right_clicked = False
-hold_click = False
 
 prev_x, prev_y, curr_x, curr_y = 0, 0, 0, 0
 
 
 def click(states):
-    global left_clicked, right_clicked, hold_click
+    global left_clicked, right_clicked
 
     if not states[0] and states[1] and not left_clicked:
         win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
