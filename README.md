@@ -1,4 +1,4 @@
-# VirtualMouse
+# Virtual-Mouse
 
 Python program made with mediapipe.
 </br>
