@@ -1,3 +1,5 @@
+"""Virtual Mouse made with Mediapipe."""
+
 import cv2
 import mediapipe as mp
 from screeninfo import get_monitors
@@ -19,6 +21,7 @@ mouse = Controller()
 
 
 def click(states):
+    """Handle Button clicks."""
     global left_clicked, right_clicked
 
     if not states[0] and states[1] and not left_clicked:
@@ -37,6 +40,7 @@ def click(states):
 
 
 def get_states(positions):
+    """Return if fingers are up or down."""
     states = [False] * 2
     indices = ((6, 8), (10, 12))
 
@@ -48,6 +52,7 @@ def get_states(positions):
 
 
 def move_mouse(positions, image_w, image_h):
+    """Move the cursor relative to the hand and smoothen the transition."""
     global prev_x, prev_y, curr_x, curr_y
 
     monitor = get_monitors()[0]
